@@ -26,6 +26,11 @@
 
 - (IBAction)getBalanceAction:(id)sender {
     
+    /**
+     完整的 CCTEtherLib 代码，请加我的QQ：705356202 收费400元（ETH+BTC全套库+Demo代码）
+     代码里不明白的都可以问我，其他区块链相关的问题我们也都可以互相讨论，专注区块链开发，还希望交个朋友。
+     **/
+    
     _addText.text = @"0xe2283b84afc7d99b2a4511b2bf5eaa42678aff49";
  
     if (_addText.text.length == 0) {
