@@ -9,32 +9,31 @@
 #import <Foundation/Foundation.h>
 
 /**
- 完整的 CCTEtherLib 库代码，请加我的QQ：705356202 收费400元（ETH+BTC全套库+Demo代码）
- 代码里不明白的都可以问我，其他区块链相关的问题我们也都可以互相讨论，专注区块链开发，还希望交个朋友。
+ 完整的 CCTEtherLib 代码，请加我的QQ：705356202
  **/
 
 typedef NS_ENUM(NSInteger, CCTEtherError) {
 
-    CCTEtherErrorMnemonicsLength = 0,       //助记词 长度不够
-    CCTEtherErrorMnemonicsCount,            //助记词 个数不够
-    CCTEtherErrorMnemonicsValidWord,        //某个 助记词有误（助记词有误）
-    CCTEtherErrorMnemonicsValidPhrase,      //助记词 有误
-    CCTEtherErrorPwdLength,                 //密码长度不够
-    CCTEtherErrorKeyStoreLength,            //KeyStore长度不够
-    CCTEtherErrorKeyStoreValid,             //KeyStore解密失败
-    CCTEtherErrorPrivateKeyLength,          //私钥长度不够
-    CCTEtherErrorAddressRepeat,             //钱包导入重复
-    HSWalletCreateSuc,                      //钱包创建成功
-    HSWalletImportMnemonicsSuc,             //助记词导入成功
-    HSWalletImportKeyStoreSuc,              //KeyStore导入成功
-    HSWalletImportPrivateKeySuc,            //私钥导入成功
-    CCTEtherErrorNotGasPrice,               //获取GasPrice失败
-    CCTEtherErrorNotNonce,                  //获取Nonce失败
-    CCTEtherErrorMoneyMin,                  //转账金额太小 取消使用
-    CCTEtherErrorNSOrderedDescending,       //余额不足 取消使用
-    CCTEtherErrorPWD,                       //密码错误
-    CCTEtherErrorSend,                      //转账失败
-    HSWalletSucSend,                        //转账成功
+    CCTEtherErrorMnemonicsLength = 0,       //0 助记词 长度不够
+    CCTEtherErrorMnemonicsCount,            //1 助记词 个数不够
+    CCTEtherErrorMnemonicsValidWord,        //2 某个 助记词有误（助记词有误)
+    CCTEtherErrorMnemonicsValidPhrase,      //3 助记词 有误
+    CCTEtherErrorPwdLength,                 //4 密码长度不够
+    CCTEtherErrorKeyStoreLength,            //5 KeyStore长度不够
+    CCTEtherErrorKeyStoreValid,             //6 KeyStore解密失败
+    CCTEtherErrorPrivateKeyLength,          //7 私钥长度不够
+    CCTEtherErrorAddressRepeat,             //8 钱包导入重复
+    CCTWalletCreateSuc,                     //9 钱包创建成功
+    CCTWalletImportMnemonicsSuc,            //10 助记词导入成功
+    CCTWalletImportKeyStoreSuc,             //11 KeyStore导入成功
+    CCTWalletImportPrivateKeySuc,           //12 私钥导入成功
+    CCTEtherErrorNotGasPrice,               //13 获取GasPrice失败
+    CCTEtherErrorNotNonce,                  //14 获取Nonce失败
+    CCTEtherErrorMoneyMin,                  //15 转账金额太小 取消使用
+    CCTEtherErrorNSOrderedDescending,       //16 余额不足 取消使用
+    CCTEtherErrorPWD,                       //17 密码错误
+    CCTEtherErrorSend,                      //18 转账失败
+    CCTWalletSucSend,                       //19 转账成功
 };
 
 @interface CCTEtherLib : NSObject
@@ -94,10 +93,10 @@ typedef NS_ENUM(NSInteger, CCTEtherError) {
                    Money:(NSString *)money
                    Token:(NSString *)token
             DecimalCount:(NSString *)decimalCount
-        currentKeyStore:(NSString *)keyStore
-                    pwd:(NSString *)pwd
-               GasPrice:(NSString *)gasPrice
-               GasLimit:(NSString *)gasLimit
-            Resultblock:(void(^)(NSString *hashStr,BOOL suc,CCTEtherError error))block;
+         currentKeyStore:(NSString *)keyStore
+                     pwd:(NSString *)pwd
+                GasPrice:(NSString *)gasPrice
+                GasLimit:(NSString *)gasLimit
+             Resultblock:(void(^)(NSString *hashStr,BOOL suc,CCTEtherError error))block;
 
 @end
